@@ -1,0 +1,16 @@
+.menu-navbar {
+  padding: 10px;
+  height: 100%;
+}
+.menu-navbar ul {
+  text-align: left;
+}
+
+.menu-navbar .card {
+  height: 100vh !important;
+}
+
+.menu-navbar .card h5 {
+  text-align: left;
+}
+
