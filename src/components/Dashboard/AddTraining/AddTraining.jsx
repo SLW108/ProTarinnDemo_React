@@ -47,7 +47,7 @@ const AddTraining = ({items, user, addTrainingToState}) => {
 
     const onHandleSubmit = (e) =>{
         const {id, token} = user
-        if(!isNaN(minutes) && !isNaN(training_type.id) && !isNaN(id) && !isNaN(weight)){
+        if(!isNaN(minutes) && minutes != '' && !isNaN(training_type.id) && !isNaN(id) && !isNaN(weight) && weight != ''){
 
             const parameters ={
                 'minutes': parseInt(minutes),

@@ -18,24 +18,29 @@ const Register = props =>{
     }
 
     const onHandleSubmit = e =>{
-        //Validar
-        e.preventDefault()
-        let height = parseInt(strHeight)
-        const user = {username, password, height}
-        register(user)
-       .then(resp => {
-      const user = {
-        id: resp.user.id,
-        username: resp.user.username,
-        height: resp.user.height,
-        token: resp.user.token
+        if(username != '' && password != '' && strHeight != ''){
+          e.preventDefault()
+          let height = parseInt(strHeight)
+          const user = {username, password, height}
+          register(user)
+         .then(resp => {
+        const user = {
+          id: resp.user.id,
+          username: resp.user.username,
+          height: resp.user.height,
+          token: resp.user.token
+        }
+        console.log(user)
+        props.onUserLogged(user)
+        //En vez de actualizar por props debo usar el Store
+        })
+        .catch(err => alert(err))
+        }else{
+          props.setErrMessage('Debe ingresar todos los campos!!')
+        }
+
       }
-      console.log(user)
-      props.onUserLogged(user)
-      //En vez de actualizar por props debo usar el Store
-    })
-    .catch(err => alert(err))
-    }
+        
 
 
     return(

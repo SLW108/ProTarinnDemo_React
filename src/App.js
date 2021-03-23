@@ -56,7 +56,7 @@ function App() {
           </button>
       </Route>
       <Route path='/signup'exact>
-         <Register onUserLogged = {onUserLogged}/>
+         <Register onUserLogged = {onUserLogged} setErrMessage={setErrMessage}/>
       </Route>
       <Route path='/dashboard'>
         {userLogged ? <Dashboard user={userLogged} /> : history.push('/')}
